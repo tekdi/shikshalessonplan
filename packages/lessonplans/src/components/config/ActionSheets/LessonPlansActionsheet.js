@@ -50,7 +50,7 @@ export default function LessonPlansActionSheet({
       >
         <VStack space="4">
           <BodyMedium color="gray.400" textTransform="inherit">
-            {lessonPlan?.description}
+            {lessonPlan?.id}
           </BodyMedium>
 
           <HStack space="2">
@@ -63,7 +63,7 @@ export default function LessonPlansActionSheet({
                   p="0"
                 />
                 <BodyMedium color="worksheetBoxText.400">
-                  {t("DURATION")}: {lessonPlan?.duration}
+                  {t("NAME")}: {lessonPlan?.name}
                 </BodyMedium>
               </HStack>
               <HStack space="1" alignItems="center">
@@ -74,7 +74,7 @@ export default function LessonPlansActionSheet({
                   p="0"
                 />
                 <BodyMedium color="worksheetBoxText.400">
-                  {t("SKILLS")}: {lessonPlan?.skills[0]}
+                  {t("CREATOR")}: {lessonPlan?.creator}
                 </BodyMedium>
               </HStack>
             </VStack>
@@ -87,7 +87,7 @@ export default function LessonPlansActionSheet({
                   p="0"
                 />
                 <BodyMedium color="worksheetBoxText.400">
-                  {t("TOPICS")}: {lessonPlan?.topic[0]}
+                  {t("MEDIUM")}: {lessonPlan?.medium}
                 </BodyMedium>
               </HStack>
               <HStack space="1" alignItems="center">

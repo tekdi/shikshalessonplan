@@ -116,27 +116,29 @@ export const DEFAULT_THEME = async (theme) => {
     const adminTheme = await getApiConfig(['theme'])
     theme = JSON.parse(adminTheme['theme.forModules'])
   }
-
   if (theme === 'monochrome') {
     return extendTheme(monochrome.theme)
   }
   return extendTheme(joyfull.theme)
 }
 
-export const getAppshellData = async (routes = [], role = '') => {
+export const getAppshellData = async (routes = [], role = '', theme = null) => {
   try {
+    role = "teacher";
     if (role === '') {
-      role = await getRole()
+      // role = await getRole()
     }
     const config = await getApiConfig()
-    const themeName = JSON.parse(config['theme.forModules'])
+    const themeName = theme ? theme : JSON.parse(config['theme.forModules'])
     const modules = config[`roles.${role?.toLowerCase()}`]
-    const newRoutes = routes.filter((item) =>
-      modules?.includes(item.moduleName)
-    )
-    const newFooterLinks = footerLinks.filter((item) =>
-      modules?.includes(item.moduleName)
-    )
+    // const newRoutes = routes.filter((item) =>
+    //   modules?.includes(item.moduleName)
+    // )
+    const newRoutes = routes
+    // const newFooterLinks = footerLinks.filter((item) =>
+    //   modules?.includes(item.moduleName)
+    // )
+    const newFooterLinks = footerLinks
     const newTheme = await DEFAULT_THEME(themeName)
     return { newTheme, newRoutes, newFooterLinks, config }
   } catch (e) {

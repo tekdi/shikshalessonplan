@@ -42,6 +42,7 @@ import { videoListData } from "components/config/VideoListData";
 import FloatingVideoPlayer from "components/FloatingVideoPlayer";
 import VideoCard from "components/VideosCard";
 import colorTheme from "colorTheme";
+import {getOne} from "../components/LessonPlansRegistryService";
 
 const colors = overrideColorTheme(colorTheme);
 
@@ -66,15 +67,14 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
   };
 
   React.useEffect(async () => {
-    console.log("id", id);
-    const lessonPlansData = await lessonPlansRegistryService.getOne({ id });
+    //const lessonPlansData = await lessonPlansRegistryService.getOne({ id });
     // console.log(lessonPlansData1);
     //const lessonPlansData = lessonPlansList[4];
-    console.log("lessonPlansData", lessonPlansData);
+    const lessonPlansData = await getOne({ id });
     setLessonPlan(lessonPlansData);
-    getLikes();
-    const data = await lessonPlansRegistryService.getLessonPlansComments(id);
-    setCommets(data);
+    //getLikes();
+    //const data = await lessonPlansRegistryService.getLessonPlansComments(id);
+    //setCommets(data);
     setLoading(false);
   }, []);
 
@@ -149,8 +149,7 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
   return (
     <Layout
       _header={{
-        //title: lessonPlan?.name,
-        title: "History of World",
+        title: lessonPlan.name,
         iconComponent: (
           <HStack>
             <IconByName
@@ -179,7 +178,7 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
               onPress={handleLike}
             />
             <IconByName name="ShareLineIcon" onPress={handleShare} />
-            <Link href={"https://" + lessonPlan.downloadUrl} isExternal>
+            <Link href={lessonPlan.downloadUrl} isExternal>
               <IconByName
                 //onPress={(e) => navigate(lessonPlan.downloadUrl)}
                 name="DownloadLineIcon"
@@ -209,7 +208,7 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
                   _header={{ pb: "5" }}
                 >
                   <VStack space={3} alignItems="left">
-                    {item.Description !== "" && <Text>{item.Description}</Text>}
+                    {item.id !== "" && <Text>{item.id}</Text>}
                     <VStack space={1} alignItems="left">
                       {item.Points.length > 0 &&
                         item.Points.map((item, index) => (
@@ -242,7 +241,7 @@ export default function SingleLessonPlan({ footerLinks, appName }) {
                       index={index}
                       canShare={true}
                       key={index}
-                      {...{ item, url: `/video/${item.id}` }}
+                      {...{ item, url: lessonPlan.streamingUrl }}
                     />
                   );
                 })

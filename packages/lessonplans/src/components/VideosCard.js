@@ -20,12 +20,6 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import {
-  LinkedinShareButton,
-  LinkedinIcon,
-  WhatsappIcon,
-  WhatsappShareButton,
-} from "react-share";
 import colorTheme from "colorTheme";
 const colors = overrideColorTheme(colorTheme);
 

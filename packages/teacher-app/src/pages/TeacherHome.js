@@ -25,9 +25,9 @@ const PRESENT = "Present";
 const ABSENT = "Absent";
 const UNMARKED = "Unmarked";
 
-const SelfAttendanceSheet = React.lazy(() =>
+/*const SelfAttendanceSheet = React.lazy(() =>
   import("profile/SelfAttendanceSheet")
-);
+);*/
 
 function Home({ footerLinks, appName, setAlert }) {
   const { t } = useTranslation();
@@ -76,7 +76,7 @@ function Home({ footerLinks, appName, setAlert }) {
       data: [
         {
           title: t("CLASSES"),
-          link: "/classes",
+          //link: "/classes",
           subTitle: "3 " + t("REMAINING"),
           icon: "ParentLineIcon",
           _box: {
@@ -168,7 +168,7 @@ function Home({ footerLinks, appName, setAlert }) {
   }, []);
 
   return (
-    <SelfAttendanceSheet
+ /*   <SelfAttendanceSheet
       {...{
         setAlert,
         showModal,
@@ -176,7 +176,7 @@ function Home({ footerLinks, appName, setAlert }) {
         setAttendance: setSelfAttendance,
         appName,
       }}
-    >
+    >*/
       <Layout
         _header={{
           title: t("HOME"),
@@ -290,7 +290,7 @@ function Home({ footerLinks, appName, setAlert }) {
           </Modal.Content>
         </Modal>
       </Layout>
-    </SelfAttendanceSheet>
+    //</SelfAttendanceSheet>
   );
 }
 export default Home;

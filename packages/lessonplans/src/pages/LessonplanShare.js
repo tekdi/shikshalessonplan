@@ -77,7 +77,7 @@ const newStudents = [
 
 export default function LessonplanShare({ footerLinks, appName }) {
   const { t } = useTranslation();
-  const Card = React.lazy(() => import("students/Card"));
+  //const Card = React.lazy(() => import("students/Card"));
   const [students, setStudents] = React.useState([]);
   const [showModal, setShowModal] = React.useState(false);
   const [showSuccessModal, setShowSuccessModal] = React.useState(false);
@@ -218,7 +218,7 @@ export default function LessonplanShare({ footerLinks, appName }) {
           <Box shadow="2" p="5">
             <Pressable onPress={(e) => setShowSuccessModal(true)}>
               <WhatsappShareButton
-                url={`https://sandbox.shiksha.samagra.io/modules/worksheet/worksheet/${lessonplanId}/view`}
+                url={`https://alt.uniteframework.io/modules/worksheet/worksheet/${lessonplanId}/view`}
                 title="Lessonplan"
                 separator=":: "
               >
@@ -232,7 +232,7 @@ export default function LessonplanShare({ footerLinks, appName }) {
           <Box shadow="2" p="5">
             <Pressable onPress={(e) => setShowSuccessModal(true)}>
               <LinkedinShareButton
-                url={`https://sandbox.shiksha.samagra.io/modules/worksheet/worksheet/${lessonplanId}/view`}
+                url={`https://alt.uniteframework.io/modules/worksheet/worksheet/${lessonplanId}/view`}
               >
                 <HStack space="5">
                   <LinkedinIcon size={15} round />

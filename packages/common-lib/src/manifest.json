@@ -71,6 +71,13 @@
         "module": "Registry",
         "route": "/",
         "routeparameters": {}
+      },
+      {
+        "title": "LESSON PLANS",
+        "icon": "UserLineIcon",
+        "module": "lessonplans",
+        "route": "/lessonplans",
+        "routeparameters": {}
       }
     ]
   },
@@ -96,6 +103,6 @@
     }
   ],
 
-  "auth_url": "https://dev-shiksha.uniteframework.io/auth/realms/sunbird-rc/protocol/openid-connect/token",
+  "auth_url": "https://alt.uniteframework.io/auth/realms/hasura-app/protocol/openid-connect/token",
   "maxWidth": "1080"
 }

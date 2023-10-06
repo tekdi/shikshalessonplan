@@ -3,7 +3,10 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/common-lib",
+      "packages/core",
+      "packages/lessonplans",
+      "packages/teacher-app"
     ]
   },
   "scripts": {
@@ -16,6 +19,7 @@
     "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "eslint": "7.32.0",
     "lerna": "4.0.0",
     "prettier": "^2.6.0"
   }

@@ -18,11 +18,6 @@ function App() {
   const routes = [
     {
       moduleName: "lessonplans",
-      path: "/lessonplans/list",
-      component: Lessonplans,
-    },
-    {
-      moduleName: "lessonplans",
       path: "/videos/list",
       component: ExploreVideosList,
     },
@@ -43,8 +38,8 @@ function App() {
     },
     {
       moduleName: "lessonplans",
-      path: "*",
-      component: LessonPlansDetails,
+      path: "/",
+      component: Lessonplans,
     },
   ];
   const LoginComponent = React.lazy(() => import("core/Login"));

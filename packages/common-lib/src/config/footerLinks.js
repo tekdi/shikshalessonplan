@@ -7,38 +7,10 @@ export default [
     routeparameters: {}
   },
   {
-    title: 'CLASSES',
-    icon: 'TeamLineIcon',
-    moduleName: 'classes',
-    route: '/classes',
-    routeparameters: {}
-  },
-  {
-    title: 'TEACHING',
+    title: 'LESSON PLANS',
     icon: 'BookOpenLineIcon',
-    moduleName: 'worksheet',
-    route: '/worksheet',
-    routeparameters: {}
-  },
-  {
-    title: 'MY_LEARNING',
-    icon: 'UserLineIcon',
-    moduleName: 'mylearning',
-    route: '/mylearning',
-    routeparameters: {}
-  },
-  {
-    title: 'VISITS',
-    icon: 'GovernmentLineIcon',
-    moduleName: 'visits',
-    route: '/visits',
-    routeparameters: {}
-  },
-  {
-    title: 'MATERIALS',
-    icon: 'BookOpenLineIcon',
-    moduleName: 'materials',
-    route: '/',
+    moduleName: 'lessonplans',
+    route: '/lessonplans',
     routeparameters: {}
   }
 ]

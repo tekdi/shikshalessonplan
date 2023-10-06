@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import { Text, Box, Pressable, Image, Avatar } from "native-base";
 import { useTranslation } from "react-i18next";
@@ -127,3 +128,4 @@ const MyClasses = ({ footerLinks, setAlert, appName }) => {
 };
 
 export default MyClasses;
+*/

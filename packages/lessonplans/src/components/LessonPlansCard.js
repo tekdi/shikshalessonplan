@@ -31,6 +31,7 @@ import jwt_decode from "jwt-decode";
 //   WhatsappShareButton,
 // } from "react-share";
 import colorTheme from "colorTheme";
+import getData from "./LessonPlansRegistryService";
 const colors = overrideColorTheme(colorTheme);
 
 export default function LessonPlansCard({ item, url, canShare, appName }) {
@@ -168,7 +169,7 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
             WebkitBoxOrient: "vertical",
           }}
         >
-          {item?.description}
+          {item?.id}
         </BodyMedium>
         <HStack space="2" justifyContent="space-between" alignItems="baseline">
           <VStack space="2">
@@ -178,7 +179,7 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
                 _icon={{ size: 12 }}
                 p="0"
               />
-              <Subtitle>{"Source: " + item?.source}</Subtitle>
+              <Subtitle>{"Source: " + item?.organisation?.orgName}</Subtitle>
             </HStack>
             <HStack space="1" alignItems="center">
               <IconByName name="SurveyLineIcon" _icon={{ size: 12 }} p="0" />
@@ -186,13 +187,13 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
             </HStack>
             <HStack space="1" alignItems="center">
               <IconByName name="ArticleLineIcon" _icon={{ size: 12 }} p="0" />
-              <Subtitle>{"Downloads: " + item?.downloads}</Subtitle>
+              <Subtitle>{"Medium: " + item?.medium}</Subtitle>
             </HStack>
           </VStack>
           <VStack space="2">
             <HStack space="1" alignItems="center">
               <IconByName name="TimeLineIcon" _icon={{ size: 12 }} p="0" />
-              <Subtitle>{"Duration: " + item?.duration}</Subtitle>
+              <Subtitle>{"Category: " + item?.category}</Subtitle>
             </HStack>
             <HStack space="1" alignItems="center">
               <IconByName
@@ -200,7 +201,7 @@ export default function LessonPlansCard({ item, url, canShare, appName }) {
                 _icon={{ size: 12 }}
                 p="0"
               />
-              <Subtitle>{"Grade: " + item?.gradeLevel}</Subtitle>
+              <Subtitle>{"Grade: " + item?.gradeLevel[0]}</Subtitle>
             </HStack>
           </VStack>
         </HStack>
